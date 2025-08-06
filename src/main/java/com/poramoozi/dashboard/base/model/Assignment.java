@@ -19,15 +19,14 @@ public class Assignment {
 
     @Id
     private Long id;
-
+    private LocalDate startAt;
+    private LocalDate endAt;
+    private String status;
 
     @ManyToMany
     private List<User> AssignedTo;
 
     @ManyToOne
-    private َAssignment task;
-
-
-
+    private Assignment task;
 
 }
