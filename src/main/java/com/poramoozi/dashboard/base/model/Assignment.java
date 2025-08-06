@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-public class Task {
+public class Assignment {
 
     @Id
     private Long id;
@@ -24,9 +24,9 @@ public class Task {
     private String status;
 
     @ManyToMany
-    private List<User> AssignedTo;
+    private List<MyUser> AssignedTo;
 
     @ManyToOne
-    private Task task;
+    private Assignment assignment;
 
 }

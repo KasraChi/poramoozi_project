@@ -58,7 +58,7 @@ public class TaskListView extends Main {
         var dateFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(getLocale());
 
         taskGrid = new Grid<>();
-        taskGrid.setItems(query -> taskService.list(toSpringPageRequest(query)).stream());
+//        taskGrid.setItems(query -> taskService.list(toSpringPageRequest(query)).stream());
         taskGrid.addColumn(Task::getDescription).setHeader("Description");
         taskGrid.addColumn(task -> Optional.ofNullable(task.getDueDate()).map(dateFormatter::format).orElse("Never"))
                 .setHeader("Due Date");

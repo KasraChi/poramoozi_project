@@ -8,16 +8,16 @@ import jakarta.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Entity
-public class UserTask {
+public class UserAssignment {
     @Id
     @GeneratedValue
     private Long id;
 
     @ManyToOne
-    private User user;
+    private MyUser user;
 
     @ManyToOne
-    private Task task;
+    private Assignment assignment;
 
     private LocalDate assignedDate;
     private int timeSpentInMinutes;

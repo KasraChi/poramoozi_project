@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-public class User {
+public class MyUser {
     @Id
     private Long id;
     private String username;

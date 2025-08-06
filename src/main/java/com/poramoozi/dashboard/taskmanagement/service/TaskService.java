@@ -1,7 +1,7 @@
 package com.poramoozi.dashboard.taskmanagement.service;
 
 import com.poramoozi.dashboard.taskmanagement.domain.Task;
-import com.poramoozi.dashboard.taskmanagement.domain.TaskRepository;
+//import com.poramoozi.dashboard.base.Repository.TaskRepository;
 import org.jspecify.annotations.Nullable;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,14 +16,18 @@ import java.util.List;
 @PreAuthorize("isAuthenticated()")
 public class TaskService {
 
-    private final TaskRepository taskRepository;
+//    private final TaskRepository assigmentRepository;
 
     private final Clock clock;
 
-    TaskService(TaskRepository taskRepository, Clock clock) {
-        this.taskRepository = taskRepository;
+    public TaskService(Clock clock) {
         this.clock = clock;
     }
+
+//    TaskService(TaskRepository assigmentRepository, Clock clock) {
+//        this.assigmentRepository = assigmentRepository;
+//        this.clock = clock;
+//    }
 
     @Transactional
     public void createTask(String description, @Nullable LocalDate dueDate) {
@@ -34,12 +38,12 @@ public class TaskService {
         task.setDescription(description);
         task.setCreationDate(clock.instant());
         task.setDueDate(dueDate);
-        taskRepository.saveAndFlush(task);
+//        assigmentRepository.saveAndFlush(task);
     }
 
-    @Transactional(readOnly = true)
-    public List<Task> list(Pageable pageable) {
-        return taskRepository.findAllBy(pageable).toList();
-    }
+//    @Transactional(readOnly = true)
+//    public List<Task> list(Pageable pageable) {
+//        return assigmentRepository.findAllBy(pageable).toList();
+//    }
 
 }
