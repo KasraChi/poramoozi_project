@@ -17,7 +17,7 @@ public class UserTask {
     private User user;
 
     @ManyToOne
-    private Assignment task;
+    private Task task;
 
     private LocalDate assignedDate;
     private int timeSpentInMinutes;

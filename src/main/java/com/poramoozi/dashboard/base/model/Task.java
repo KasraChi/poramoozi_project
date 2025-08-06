@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-public class Assignment {
+public class Task {
 
     @Id
     private Long id;
@@ -27,6 +27,6 @@ public class Assignment {
     private List<User> AssignedTo;
 
     @ManyToOne
-    private Assignment task;
+    private Task task;
 
 }
